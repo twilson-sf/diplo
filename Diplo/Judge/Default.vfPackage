@@ -1,0 +1,123 @@
+// Together Model file
+package Judge.Default;
+
+/** @shapeType Package
+@filters #Sun Feb 28 10:24:18 EST 1999
+filter.extendsLink=1/show
+filter.privateAttribute=1/show
+filter.anyLink=1/show
+filter.allOperations=1/show
+filter.publicOperation=1/show
+filter.staticAttribute=1/show
+filter.implementsLink=1/show
+filter.privateOperation=1/show
+filter.getSetOperation=1/show
+filter.templateClass=1/show
+filter.abstractOperation=1/show
+filter.associationLink=1/show
+filter.dependencyLink=1/show
+filter.structClass=1/show
+filter.constructorOperation=1/show
+filter.publicAttribute=1/show
+filter.usageDependencyLink=1/hide
+filter.packageDependencyLink=1/show
+filter.destructorOperation=1/show
+filter.protectedAttribute=1/show
+filter.inlineOperation=1/show
+filter.virtualOperation=1/show
+filter.abstractClass=1/show
+filter.aggregationLink=1/show
+filter.staticOperation=1/show
+filter.unionClass=1/hide
+filter.protectedOperation=1/show
+filter.allAttributes=1/show
+filter.instantiationLink=1/show
+
+@positions #Sat Mar 06 13:39:04 EST 1999
+Class#PSUnit=10,10,213,741,1
+Class#PSHistory=488,217,194,316,1
+Class#Retreat=299,11,166,77,1
+GeneralizationLink#PSArmy#PSUnit=99,774,99,751
+GeneralizationLink#PSFleet#PSUnit=339,781,161,751
+Class#PSIOFile=307,577,145,121,1
+Class#PSJudgeApp=304,227,166,70,1
+Class#PSWhichCoast=512,146,166,163,1
+AssociationLink#Build#pBuild#Build=632,77,632,99,666,99,666,65,644,65
+Package#Judge.Release.Default.Default=302,250,100,80,1
+Class#Disband=504,117,152,60,1
+Class#PSFleet=253,781,173,138,1
+Package#Judge.Debug.Default.Default=394,130,86,80,1
+Class#SC=303,113,194,77,1
+Package#Judge.res.Default.Default=302,130,72,80,1
+Class#PSData=690,10,213,843,1
+Class#PSArmy=13,774,173,138,1
+AssociationLink#Retreat#m_pUnit#PSUnit=299,49,223,49
+Class#Build=492,17,152,60,1
+*/
+class Default {
+  Judge.res.Default.Default Hidden_2;
+  Judge.Debug.Default.Default Hidden_1;
+  Judge.Release.Default.Default Hidden_3;
+  PSJudgeApp _4;
+  PSJudge#endif _5;
+  PSPower#endif _6;
+  PSGame#endif _7;
+  PSOrder#endif _8;
+  PSUnit _9;
+  PSWhichCoast Hidden_4;
+  PSProvince#endif _11;
+  Retreat _12;
+  Disband _13;
+  Build _14;
+  SC _15;
+  PSArmy _16;
+  PSCoast#endif _17;
+  PSFleet _18;
+  PSData _19;
+  PSHistory _20;
+  PSStep#endif _21;
+  PSIOFile Hidden_5;
+  PSJudge#endif _1;
+  PSPower#endif _2;
+  PSGame#endif _3;
+  PSOrder#endif _5;
+  PSProvince#endif _6;
+  PSCoast#endif _7;
+  PSStep#endif _8;
+  PSProvince#endif _1;
+  PSJudge#endif _5;
+  PSPower#endif _6;
+  PSGame#endif _7;
+  PSOrder#endif _8;
+  PSProvince#endif _11;
+  PSCoast#endif _17;
+  PSStep#endif _21;
+  PSJudge#endif _5;
+  PSPower#endif _6;
+  PSGame#endif _7;
+  PSOrder#endif _8;
+  PSProvince#endif _11;
+  PSCoast#endif _17;
+  PSStep#endif _21;
+  PSJudge#endif _5;
+  PSPower#endif _6;
+  PSGame#endif _7;
+  PSOrder#endif _8;
+  PSProvince#endif _11;
+  PSCoast#endif _17;
+  PSStep#endif _21;
+  PSJudge#endif _5;
+  PSPower#endif _6;
+  PSGame#endif _7;
+  PSOrder#endif _8;
+  PSProvince#endif _11;
+  PSCoast#endif _17;
+  PSStep#endif _21;
+  PSJudge#endif _5;
+  PSPower#endif _6;
+  PSGame#endif _7;
+  PSOrder#endif _8;
+  PSProvince#endif _11;
+  PSCoast#endif _17;
+  PSStep#endif _21;
+}

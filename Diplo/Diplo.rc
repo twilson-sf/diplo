@@ -1,0 +1,491 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""res\\diplo.rc2""  // non-App Studio edited resources\r\n"
+    "#include  ""Judge\\Judge.rc""\r\n"
+    "#include ""afxres.rc""  \t// Standard components\r\n"
+    "#include ""afxprint.rc""\t// printing/print preview resources\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "RES\\DIPLO.ICO"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "RES\\TOOLBAR.BMP"
+IDR_HISTORY_TOOLBAR     BITMAP  DISCARDABLE     "res\\history_.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        POPUP "&New"
+        BEGIN
+            MENUITEM "",                            ID_FILE_NEW_NONE
+        END
+        MENUITEM "&Open..\tCtrl+O",             ID_FILE_OPEN
+        MENUITEM "&Build...\tCtrl+B",           ID_FILE_BUILDGAME
+        MENUITEM "&Modify...\tCtrl+M",          ID_FILE_MODIFY
+        MENUITEM SEPARATOR
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM "Save &image...",              ID_FILE_SAVE_AS_BITMAP
+        MENUITEM "&Print...\tCtrl+P",           ID_FILE_PRINT
+        MENUITEM "Print Pre&view",              ID_FILE_PRINT_PREVIEW
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit\tAlt+F4",               ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "Select &All",                 ID_EDIT_SELECT_ALL
+        MENUITEM "&Copy",                       ID_EDIT_COPY
+        MENUITEM SEPARATOR
+        MENUITEM "Current &Situation",          ID_EDIT_CURRENTSITUATION
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+        MENUITEM "&History Bar",                ID_VIEW_HISTORYBAR
+    END
+    POPUP "&Actions"
+    BEGIN
+        MENUITEM "&Supports",                   IDC_SUPPORTS
+        MENUITEM "&Convoys",                    IDC_CONVOYS
+        MENUITEM "&Enter",                      IDC_OK
+        MENUITEM "&Reset",                      IDC_RESET
+    END
+    POPUP "Histor&y"
+    BEGIN
+        MENUITEM "&Back\tBksp",                 ID_HISTORY_BACK
+        MENUITEM "&Forward\tShift+Bksp",        ID_HISTORY_FORWARD
+    END
+    POPUP "A&djudicator"
+    BEGIN
+        MENUITEM "&Start Again",                IDM_START_AGAIN
+        MENUITEM "&Delete Move\tDel",           IDM_DELETE_MOVE
+        MENUITEM SEPARATOR
+        MENUITEM "&Adjudicate\tCtrl+A",         IDM_ADJUDICATE
+    END
+    POPUP "&Options"
+    BEGIN
+        MENUITEM "&Animate Moves",              ID_ANIMATE
+        MENUITEM "Fast Entr&y",                 IDC_ACTIONS_FASTENTRY
+        MENUITEM "&Fonts...",                   ID_OPTIONS_FONTS
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Help ...",                   ID_HELP
+        MENUITEM SEPARATOR
+        MENUITEM "&About Diplo...",             ID_APP_ABOUT
+    END
+END
+
+IDR_CONTEXTMENU MENU DISCARDABLE 
+BEGIN
+    POPUP " "
+    BEGIN
+        MENUITEM "Supports",                    IDC_SUPPORTS
+        MENUITEM "Convoys",                     IDC_CONVOYS
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "A",            IDM_ADJUDICATE,         VIRTKEY, CONTROL, NOINVERT
+    "B",            ID_FILE_BUILDGAME,      VIRTKEY, CONTROL, NOINVERT
+    "M",            ID_FILE_MODIFY,         VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_HISTORY_BACK,        VIRTKEY, NOINVERT
+    VK_BACK,        ID_HISTORY_FORWARD,     VIRTKEY, SHIFT, NOINVERT
+    VK_F1,          ID_HELP,                VIRTKEY, NOINVERT
+    VK_F1,          ID_CONTEXT_HELP,        VIRTKEY, SHIFT, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  34, 22, 196, 68
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Diplo"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,4,8,20,20
+    LTEXT           "Diplo Version 2.81",IDC_STATIC,32,8,124,8
+    DEFPUSHBUTTON   "OK",IDOK,32,45,86,16,WS_GROUP
+    LTEXT           "Copyright © 1996-1998, PlanetSoft ®\r",IDC_STATIC,32,20,
+                    164,8
+    LTEXT           "",IDC_PLANETSOFT,32,33,164,8,SS_NOTIFY
+END
+
+IDD_PASSWORD DIALOG DISCARDABLE  0, 0, 187, 115
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Diplo - Password"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,96,94,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,38,94,50,14
+    EDITTEXT        IDC_EDIT1,38,69,108,14,ES_CENTER | ES_AUTOHSCROLL
+    CTEXT           "",IDC_PASSWORD_STATIC,7,14,173,29
+    LTEXT           "",IDC_DIPLO_LINK_STATIC,7,52,173,8,SS_NOTIFY
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_NEWCURSOR           CURSOR  DISCARDABLE     "res\\cursor1.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_HISTORY_TOOLBAR TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_HISTORY_BACK
+    BUTTON      ID_HISTORY_FORWARD
+    SEPARATOR
+    SEPARATOR
+    BUTTON      ID_ANIMATE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        VERTGUIDE, 32
+    END
+
+    IDD_PASSWORD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        VERTGUIDE, 38
+        VERTGUIDE, 146
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 108
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "Diplo"
+    AFX_IDS_IDLEMESSAGE     "Press F1 for Help"
+    AFX_IDS_HELPMODEMESSAGE "Select an object on which to get Help"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Start a new game\nNew"
+    ID_FILE_OPEN            "Open an existing game\nOpen"
+    ID_FILE_SAVE            "Save current game\nSave"
+    ID_FILE_SAVE_AS         "Save current game with a new name"
+    ID_FILE_PRINT           "Print this map"
+    ID_FILE_PRINT_PREVIEW   "Print Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information\nAbout"
+    ID_APP_EXIT             "Exit Diplo"
+    ID_HELP_FINDER          "List Help topics\nHelp Topics"
+    ID_CONTEXT_HELP         "Display help for clicked on buttons, menus and windows\nHelp"
+    ID_HELP                 "Display help for current task or command\nHelp"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this game"
+    ID_FILE_MRU_FILE2       "Open this game"
+    ID_FILE_MRU_FILE3       "Open this game"
+    ID_FILE_MRU_FILE4       "Open this game"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane"
+    ID_PREV_PANE            "Switch back to the previous window pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_ACTIONS_RESULTS      "Display current situation of the game"
+    ID_HISTORY_BACK         "Go Back\nBack"
+    ID_HISTORY_FORWARD      "Go Forward\nForward"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_BUILDGAME       "Build an existing game\nBuild"
+    ID_FILE_MODIFY          "Modify current game"
+    ID_CURRENT_TIME         " "
+    ID_HELP_RULES           "The Rules of the game of Diplomacy"
+    ID_MAIN_PANE            " "
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_COPY            "Copy the contents of the Info tab"
+    ID_EDIT_SELECT_ALL      "Select the entire contents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_CURRENT_MOVE         " "
+    ID_SLIDER               "Animation speed\nAnimation speed"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDC_RESET               "Reset current order\nReset"
+    IDC_SUPPORTS            "Supports\nSupports"
+    IDC_CONVOYS             "Convoys\nConvoys"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDC_OK                  "Enter current order\nEnter"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDC_ACTIONS_FASTENTRY   "Fast Entry of Orders\nFast Entry"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_SEASON_BUTTON        "Change season\nSeason"
+    ID_YEAR_COMBO           "Year\nYear"
+    ID_OK_BUILD_BUTTON      "End building game\nEnd building game"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_DELETE_MOVE         "Delete the highlighted order\nDelete order"
+    IDM_ADJUDICATE          "Adjudicate\nAdjudicate"
+    IDM_START_AGAIN         "Delete all orders and start from the begining"
+    ID_ANIMATE              "Toggle movement animation\nAnimate moves"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "Diplo\n\nDiplomacy Game\nDiplomacy Games(*.dip)\n.dip\nDiplomacy.Game\nDiplomacy Game"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_HISTORYBAR      "Show or hide the history bar"
+    ID_FILE_SAVE_AS_BITMAP  "Save the map in a .jpg format"
+    IDS_UPGRADE_PASSWORD    "Your password has expired. Please click on the link below to get the current password, type it in the box and click OK."
+    IDS_MODIFY_WARNING      "Modifying a game will delete the game's entire history. If you wish to keep the history, instead of modifying, go back to the turning point step and start from there. Are you sure you want to modify this game?"
+    ID_EDIT_CURRENTSITUATION "Display current situation\nRefresh"
+    ID_OPTIONS_FONTS        "Set the fonts for the Info tab"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW_NONE        "Bull!"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// French (Canada) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_FRC)
+#ifdef _WIN32
+LANGUAGE LANG_FRENCH, SUBLANG_FRENCH_CANADIAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_TAB_DIALOG DIALOG DISCARDABLE  0, 0, 187, 99
+STYLE WS_CHILD
+FONT 8, "Tahoma"
+BEGIN
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_FINGER_CURSOR       CURSOR  DISCARDABLE     "res\\Finger.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_TAB_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 92
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "0c0c04b0"
+        BEGIN
+            VALUE "CompanyName", "PlanetSoft\0"
+            VALUE "FileDescription", "Diplo\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "Diplo\0"
+            VALUE "LegalCopyright", "Copyright © 1998\0"
+            VALUE "OriginalFilename", "Diplo.exe\0"
+            VALUE "ProductName", "Diplo 2.81\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0xc0c, 1200
+    END
+END
+
+#endif    // !_MAC
+
+#endif    // French (Canada) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "res\diplo.rc2"  // non-App Studio edited resources
+#include  "Judge\Judge.rc"
+#include "afxres.rc"  	// Standard components
+#include "afxprint.rc"	// printing/print preview resources
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

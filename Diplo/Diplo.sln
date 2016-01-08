@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Dvm", "..\DVM\Dvm.vcxproj", "{452DB7C6-3CCF-6BC6-989C-CBFD5E51AA98}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Diplo", "Diplo.vcxproj", "{3E21C299-ED35-AA17-270B-6E2DA68DEC06}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Judge", "Judge\Judge.vcxproj", "{40F2675B-A28A-471E-E6E6-33D744805954}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+		Template|Win32 = Template|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{452DB7C6-3CCF-6BC6-989C-CBFD5E51AA98}.Debug|Win32.ActiveCfg = Debug|Win32
+		{452DB7C6-3CCF-6BC6-989C-CBFD5E51AA98}.Debug|Win32.Build.0 = Debug|Win32
+		{452DB7C6-3CCF-6BC6-989C-CBFD5E51AA98}.Release|Win32.ActiveCfg = Release|Win32
+		{452DB7C6-3CCF-6BC6-989C-CBFD5E51AA98}.Release|Win32.Build.0 = Release|Win32
+		{452DB7C6-3CCF-6BC6-989C-CBFD5E51AA98}.Template|Win32.ActiveCfg = Release|Win32
+		{452DB7C6-3CCF-6BC6-989C-CBFD5E51AA98}.Template|Win32.Build.0 = Release|Win32
+		{3E21C299-ED35-AA17-270B-6E2DA68DEC06}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3E21C299-ED35-AA17-270B-6E2DA68DEC06}.Debug|Win32.Build.0 = Debug|Win32
+		{3E21C299-ED35-AA17-270B-6E2DA68DEC06}.Release|Win32.ActiveCfg = Release|Win32
+		{3E21C299-ED35-AA17-270B-6E2DA68DEC06}.Release|Win32.Build.0 = Release|Win32
+		{3E21C299-ED35-AA17-270B-6E2DA68DEC06}.Template|Win32.ActiveCfg = Template|Win32
+		{3E21C299-ED35-AA17-270B-6E2DA68DEC06}.Template|Win32.Build.0 = Template|Win32
+		{40F2675B-A28A-471E-E6E6-33D744805954}.Debug|Win32.ActiveCfg = Debug|Win32
+		{40F2675B-A28A-471E-E6E6-33D744805954}.Debug|Win32.Build.0 = Debug|Win32
+		{40F2675B-A28A-471E-E6E6-33D744805954}.Release|Win32.ActiveCfg = Release|Win32
+		{40F2675B-A28A-471E-E6E6-33D744805954}.Release|Win32.Build.0 = Release|Win32
+		{40F2675B-A28A-471E-E6E6-33D744805954}.Template|Win32.ActiveCfg = Template|Win32
+		{40F2675B-A28A-471E-E6E6-33D744805954}.Template|Win32.Build.0 = Template|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

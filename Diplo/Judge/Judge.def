@@ -1,0 +1,7 @@
+; Judge.def : Declares the module parameters for the DLL.
+
+;LIBRARY      "JudgeD"
+DESCRIPTION  'Judge Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

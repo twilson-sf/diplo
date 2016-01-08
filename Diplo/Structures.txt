@@ -1,0 +1,70 @@
+This is the structure of a _ps file:
+
+======================
+- Type (Standard, Youngstown, etc...)
+- Empty Line
+- Number of Powers
+	- Name 
+	- Color 
+- Empty Line
+- Number of Provinces
+	- Name 
+	- 0 if it is a body of water, 1 if it is a dry land
+	- 0 if it is not a SC, 1 if it is a neutral SC, (2 * power's index + 1) if it is a HSC of a power
+		- X of the position of the Supply Square
+		- Y of the position of the Supply Square
+	- Number of neighbors
+		- Name
+	- X of the position where units are to be drawn
+	- Y of the position where units are to be drawn
+	- Number of points that define the Province
+		- X of the point
+		- Y of the point
+	- 0 if the province is not bicoastal, 1 if it is
+		- Name of the coast (South, East, etc...)
+		- Number of neighbors
+			- Name
+		- X of the position where units are to be drawn
+		- Y of the position where units are to be drawn
+	- Empty Line
+
+========================================================================================
+
+DO NOT MESS WITH THE "_PS" FILE UNLESS YOU REALLY KNOW WHAT YOU ARE DOING !!!
+
+========================================================================================
+
+
+
+This is the structure of a dip file:
+
+======================
+- Type (Standard, Youngstown, etc)
+- Year
+- Season
+- Status (Orders, Retreats, Adjustments, etc)
+- Nr of Moves
+	- Move
+- Nr of Powers
+	- Name
+	- Nr of Units
+		- Type (Army, Fleet)
+		- Name of Province
+			- Name of the Coast (South, East, etc) (if it's a fleet)
+		- 0 if it is not retreating, 1 if it is
+			- Nr of possibilities to retreat
+				- Name of Province
+	- Nr of SC-s
+		- Name
+- Nr of Disbands
+	- Name of the Power
+- Nr of Retreats
+	- Name of the Power
+
+========================================================================================
+
+DEFINITELY DO NOT MESS WITH THE "DIP" FILE !!!
+
+========================================================================================
+
+

@@ -1,0 +1,88 @@
+// Together Model file
+package Default;
+
+/** @shapeType Package
+@filters #Sun Feb 28 10:24:21 EST 1999
+filter.extendsLink=1/show
+filter.privateAttribute=1/show
+filter.anyLink=1/show
+filter.allOperations=1/show
+filter.publicOperation=1/show
+filter.staticAttribute=1/show
+filter.implementsLink=1/show
+filter.privateOperation=1/show
+filter.getSetOperation=1/show
+filter.templateClass=1/show
+filter.abstractOperation=1/show
+filter.associationLink=1/show
+filter.dependencyLink=1/show
+filter.structClass=1/show
+filter.constructorOperation=1/show
+filter.publicAttribute=1/show
+filter.usageDependencyLink=1/hide
+filter.packageDependencyLink=1/show
+filter.destructorOperation=1/show
+filter.protectedAttribute=1/show
+filter.inlineOperation=1/show
+filter.virtualOperation=1/show
+filter.abstractClass=1/show
+filter.aggregationLink=1/show
+filter.staticOperation=1/show
+filter.unionClass=1/hide
+filter.protectedOperation=1/show
+filter.allAttributes=1/show
+filter.instantiationLink=1/show
+
+@positions #Sun Feb 28 10:28:32 EST 1999
+Class#PSAboutDlg=10,10,166,104,1
+Package#Debug.Default.Default=1459,10,44,80,1
+Package#Help.Default.Default=1487,130,37,80,1
+AggregationLink#PSTabView#m_wndTab#PSDiploTabCtrl=1380,499,1285,499
+Class#PSInfoTab=1023,10,166,163,1
+Class#PSMainFrame=487,10,213,792,1
+Class#PSHistoryTab=1209,10,180,333,1
+Class#PSHistoryBar=507,887,173,129,1
+Class#PSPasswordDlg=254,377,213,180,1
+AggregationLink#PSDiploTabCtrl#m_Orders#PSOrdersTab=1202,581,1202,666
+Class#PSOrdersTab=1119,666,166,214,1
+Package#res.Default.Default=1409,10,30,80,1
+AggregationLink#PSDiploTabCtrl#m_Info#PSInfoTab=1154,418,1154,173
+Class#PSDiploApp=1305,910,166,138,1
+AggregationLink#PSMainFrame#m_wndBuildBar#PSBuildBar=700,134,795,134
+AggregationLink#PSMainFrame#m_wndHistoryBar#PSHistoryBar=593,802,593,887
+Class#PSDiploDoc=1028,1090,166,189,1
+Class#PSDiploTabCtrl=1119,418,166,163,1
+Class#PSBuildBar=795,10,208,248,1
+AggregationLink#PSAboutDlg#m_Link#PSHTMLinkStatic=176,62,271,62
+Class#PSMiniFrame=1214,1090,166,121,1
+AggregationLink#PSPasswordDlg#m_DiploLink#PSHTMLinkStatic=361,377,361,292
+Class#PSTabView=1380,418,166,172,1
+Package#Judge.Default.Default=1335,630,93,246,1
+Class#PSHTMLinkStatic=271,10,180,282,1
+Class#PSDiploView=765,666,213,1438,1
+AssociationLink#PSDiploView#m_pMoves#PSOrdersTab=978,773,1119,773
+Package#Release.Default.Default=1409,130,58,80,1
+AggregationLink#PSDiploTabCtrl#m_History#PSHistoryTab=1247,418,1247,343
+*/
+class Default {
+  res.Default.Default _1;
+  Debug.Default.Default _2;
+  Release.Default.Default _3;
+  PSAboutDlg _4;
+  Help.Default.Default _5;
+  Judge.Default.Default _6;
+  PSDiploApp _7;
+  PSMainFrame _8;
+  PSDiploDoc _9;
+  PSDiploView _10;
+  PSBuildBar _11;
+  PSInfoTab _12;
+  PSMiniFrame _13;
+  PSOrdersTab _14;
+  PSHistoryTab _15;
+  PSDiploTabCtrl _16;
+  PSHistoryBar _17;
+  PSPasswordDlg _18;
+  PSTabView _19;
+  PSHTMLinkStatic _20;
+}

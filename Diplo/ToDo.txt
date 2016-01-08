@@ -1,0 +1,36 @@
+Still to do:
+
+- Some refreshes.
+- End of game.
+- Undo.
+- Keyboard entry.
+- Save all orders in the history.
+- Adjudicate Retreats.
+- Precalculate the angle of movement.
+- _ps file creator.
+- DPTG compliance.
+- Stdio File - Handle exceptions.
+- Batch File menu item.
+- 
+- Add to _ps:
+	- Neutral color.
+	- Bitmaps.
+	- 
+- Web:
+	- In the Known Bugs page:
+		- Does not support long file names.
+		- 
+	- 
+- Installation:
+	- Add the Variants string.
+	- Put the Judge.dll in the Windows/System directory.
+	- 
+========================= 
+BUGS:
+
+- Did not set DiploView as active when Forward.
+- Printing at work didn't work. Neither at home.
+- Reset button remains pressed.
+- Long file names.
+- Bouncing strengths are not right if the attacking unit is weaker than the holding unit.
+- 
