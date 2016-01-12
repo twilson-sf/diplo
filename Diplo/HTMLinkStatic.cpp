@@ -71,7 +71,7 @@ void PSHTMLinkStatic::OnLButtonDown(UINT nFlags, CPoint point)
 	CString strDirectory = AfxGetApp()->GetProfileString(strSection, strStringItem);
 
 	HWND hWnd = GetSafeHwnd();
-	HINSTANCE hInst = ShellExecute(hWnd, "open", m_strLink, NULL, strDirectory, 0);
+	HINSTANCE hInst = ShellExecute(hWnd, L"open", m_strLink, NULL, strDirectory, 0);
 	if (hInst <= (HINSTANCE)32)
 	{
 		TRACE (_T("Couldn't open PlanetSoft home page.\r"));

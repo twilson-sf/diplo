@@ -51,7 +51,8 @@ BOOL PSWelcomeProvEditor::OnInitDialog()
 	
 	// Fill the list control with the names of provinces.
 	CListBox* pProvLB = (CListBox*) GetDlgItem(IDC_PROV_LIST);
-	for (int i = 1; i <= TG.GetNumberOfProvinces(); i++)
+	int i;
+	for (i = 1; i <= TG.GetNumberOfProvinces(); i++)
 	{
 		PSProvince* pPrv = TG.GetProvince(i);
 		ASSERT(pPrv);
@@ -70,7 +71,7 @@ void PSWelcomeProvEditor::OnOK()
 	if (m_strSelectedProv == "" && 
 		(m_nSelection == 1 || m_nSelection == 2))
 	{
-		MessageBox("Please select a province to continue.", "DipSheet", MB_ICONEXCLAMATION);
+		MessageBox(L"Please select a province to continue.", L"DipSheet", MB_ICONEXCLAMATION);
 		return;
 	}
 

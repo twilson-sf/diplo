@@ -58,7 +58,7 @@ void PSDiploDoc::OnNewGame(UINT nID)
 	CWinApp* pApp = AfxGetApp();
 
 	CString strValue;
-	strValue = pApp->GetProfileString("Directories", "Current");
+	strValue = pApp->GetProfileString(L"Directories", L"Current");
 	strValue += strVariantName + ".dip";
 	f.Open(strValue, CFile::modeRead, &e);
 	if (e.m_cause)
@@ -89,7 +89,7 @@ BOOL PSDiploDoc::OnNewDocument()
 
 	CString strVariantName = "Standard";
 	CString strValue;
-	strValue = pApp->GetProfileString("Directories", "Current");
+	strValue = pApp->GetProfileString(L"Directories", L"Current");
 	strValue += strVariantName + ".dip";
 	f.Open(strValue, CFile::modeRead, &e);
 	if (e.m_cause)
@@ -202,6 +202,7 @@ BOOL PSDiploDoc::LoadOldFormat(CArchive& arh)
 	CStringArray arStrNames;
 	int nRetArray[20][15];
 	int nRetArrayIndex = 0;
+	int k;
 	for (int i = 1; i <= 75; i++)
 	{
 		if (i != 1) // The first string ("Syr") has been already read.
@@ -214,7 +215,7 @@ BOOL PSDiploDoc::LoadOldFormat(CArchive& arh)
 		arh >> lOccupant; arh >> lBelongs;
 		arh >> lNn; arh >> lBogus;
 		arh >> lArmy;
-		for (int k = 0; k < lNn; k++)
+		for (k = 0; k < lNn; k++)
 			arh >> lBogus;
 		if (lOccupant)
 		{
@@ -253,7 +254,7 @@ BOOL PSDiploDoc::LoadOldFormat(CArchive& arh)
 	}
 
 	CString strBogus;
-	for (i = 1; i <= 7; i++)
+	for (int i = 1; i <= 7; i++)
 	{
 		arh >> strBogus; arh >> lBogus;	arh >> lBogus;
 	}
@@ -264,7 +265,7 @@ BOOL PSDiploDoc::LoadOldFormat(CArchive& arh)
 	arh >> lRetindex >> lBuiindex >> lDisindex >> lBogus;
 
 	long lPower, lArmy, lLocal, lNp;
-	for (i = 1; i <= lRetindex; i++)
+	for (int i = 1; i <= lRetindex; i++)
 	{
 		arh >> lPower;
 		arh >> lArmy;
@@ -299,7 +300,7 @@ BOOL PSDiploDoc::LoadOldFormat(CArchive& arh)
 		pRet->m_pUnit = pUnit;
 		pRet->m_pOrig = NULL;
 		long lPossibIndex;
-		for (int k = 0; k < lNp; k++)
+		for (k = 0; k < lNp; k++)
 		{
 			arh >> lPossibIndex;
 			nRetArray[nRetArrayIndex][k] = lPossibIndex;
@@ -318,7 +319,7 @@ BOOL PSDiploDoc::LoadOldFormat(CArchive& arh)
 		TG.SetStatus(GETRETREAT);
 
 	// Build all the pRet->m_Possib;
-	for (i = 0; i < nRetArrayIndex; i++)
+	for (int i = 0; i < nRetArrayIndex; i++)
 	{
 		Retreat* pRet = TG.GetRetreat(i);
 		for (int j = 0; nRetArray[i][j] != 0; j++)
@@ -330,14 +331,14 @@ BOOL PSDiploDoc::LoadOldFormat(CArchive& arh)
 	}
 
 	// Builds and Disbands.
-	for (i = 1; i <= lBuiindex; i++)
+	for (int i = 1; i <= lBuiindex; i++)
 	{
 		arh >> lPower;
 		Build* pBui = new Build;
 		pBui->m_pPower = TG.GetPower(lPower);
 		TG.AddBuild(pBui);
 	}
-	for (i = 1; i <= lDisindex; i++)
+	for (int i = 1; i <= lDisindex; i++)
 	{
 		arh >> lPower;
 		Disband* pDis = new Disband;

@@ -68,16 +68,16 @@ int PSDiploTabCtrl::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	
 	CClientDC dc(this);
 	int nHeight = -((dc.GetDeviceCaps(LOGPIXELSY) * 8) / 72);
-	m_Font.CreateFont(nHeight, 0, 0, 0, FW_BOLD, 0, 0, 0, 0, 0, 0, 0, 0, "Tahoma");// TODO: Hard code.
+	m_Font.CreateFont(nHeight, 0, 0, 0, FW_BOLD, 0, 0, 0, 0, 0, 0, 0, 0, L"Tahoma");// TODO: Hard code.
 	SetFont(&m_Font);
 
 	TC_ITEM item;
 	item.mask = TCIF_TEXT;
-	item.pszText = "Info";
+	item.pszText = L"Info";
 	InsertItem(0, &item);
-	item.pszText = "History";
+	item.pszText = L"History";
 	InsertItem(1, &item);
-	item.pszText = "Orders";
+	item.pszText = L"Orders";
 	InsertItem(2, &item);
 
 	m_Info.Create(WS_VISIBLE | WS_CHILD | WS_BORDER | WS_VSCROLL | 

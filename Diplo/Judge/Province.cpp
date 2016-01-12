@@ -52,7 +52,7 @@ PSProvince::PSProvince(PSProvince* pPrv)
 		m_Vertexes.Add(pPt + i);
 	}
 	m_poly.CreatePolygonRgn(pPt, nVertexes, ALTERNATE);
-	for (i = 0; i < (pPrv->m_Coasts).size(); i++)
+	for (int i = 0; i < (pPrv->m_Coasts).size(); i++)
 	{
 		PSCoast* pCstSrc = pPrv->m_Coasts[i];
 		PSCoast* pCst = new PSCoast(pCstSrc, this);

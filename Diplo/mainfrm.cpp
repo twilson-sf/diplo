@@ -180,8 +180,8 @@ BOOL PSMainFrame::PreCreateWindow(CREATESTRUCT& cs)
 	CFrameWnd::PreCreateWindow(cs);
 
 	CString strSection = "Settings";
-	UINT uWidth = AfxGetApp()->GetProfileInt(strSection, "Window Width", 870);
-	UINT uHeight = AfxGetApp()->GetProfileInt(strSection, "Window Height", 715);
+	UINT uWidth = AfxGetApp()->GetProfileInt(strSection, L"Window Width", 870);
+	UINT uHeight = AfxGetApp()->GetProfileInt(strSection, L"Window Height", 715);
 	cs.cx = uWidth;
 	cs.cy = uHeight;
 
@@ -193,7 +193,7 @@ BOOL PSMainFrame::OnCreateClient(LPCREATESTRUCT lpcs, CCreateContext* pContext)
 {
 	CRuntimeClass* pRuntime = RUNTIME_CLASS(PSTabView);
 	CString strSection = "Settings";
-	UINT uSplitter = AfxGetApp()->GetProfileInt(strSection, "Splitter", 180);
+	UINT uSplitter = AfxGetApp()->GetProfileInt(strSection, L"Splitter", 180);
 	if (!m_wndSplitter.CreateStatic(this, 1, 2) || 
 		!m_wndSplitter.CreateView(0, 0, pRuntime, CSize(uSplitter, 0), pContext) || 
 		!m_wndSplitter.CreateView(0, 1, RUNTIME_CLASS(PSDiploView), CSize(0, 0), pContext))
@@ -243,15 +243,15 @@ void PSMainFrame::OnDestroy()
 {
 	CString strSection = "Settings";
 	int nSpeed = GetJump();
-	AfxGetApp()->WriteProfileInt(strSection, "Animation Speed", nSpeed);
+	AfxGetApp()->WriteProfileInt(strSection, L"Animation Speed", nSpeed);
 	CRect rect;
 	GetWindowRect(&rect);
-	AfxGetApp()->WriteProfileInt(strSection, "Window Width", rect.Width());
-	AfxGetApp()->WriteProfileInt(strSection, "Window Height", rect.Height());
+	AfxGetApp()->WriteProfileInt(strSection, L"Window Width", rect.Width());
+	AfxGetApp()->WriteProfileInt(strSection, L"Window Height", rect.Height());
 
 	int nCur, nMax;
 	m_wndSplitter.GetColumnInfo(0, nCur, nMax);
-	AfxGetApp()->WriteProfileInt(strSection, "Splitter", nCur);
+	AfxGetApp()->WriteProfileInt(strSection, L"Splitter", nCur);
 
 	CFrameWnd::OnDestroy();
 	
@@ -275,7 +275,7 @@ void PSMainFrame::OnActionsBack()
 	PSStep* pPreviousStep = pHist->GetPreviousStep(TG.GetCurrentStep());
 	if (!pPreviousStep)
 	{
-		MessageBox("No history recorded before this phase.", "Diplo", MB_ICONINFORMATION);
+		MessageBox(L"No history recorded before this phase.", L"Diplo", MB_ICONINFORMATION);
 		return;
 	}
 
@@ -295,7 +295,7 @@ void PSMainFrame::OnActionsForward()
 	PSStep* pNextStep = pHist->GetNextStep(pCurrentStep);
 	if (!pNextStep)
 	{
-		MessageBox("No history recorded beyond this phase.", "Diplo", MB_ICONINFORMATION);
+		MessageBox(L"No history recorded beyond this phase.", L"Diplo", MB_ICONINFORMATION);
 		return;
 	}
 
@@ -327,7 +327,8 @@ void PSMainFrame::OnActionsForward()
 			// Get the coast it is moving to. It is the one of the occupying unit in the next step.
 			Units vUnits = pNextData->GetUnits(pUnit->GetOwner());
 			int nSize = vUnits.size();
-			for (int j = 0; j < nSize; j++)
+			int j;
+			for (j = 0; j < nSize; j++)
 			{
 				PSUnit* pFutureUnit = vUnits[j];
 				if (pFutureUnit->GetLocation() == pDest)
@@ -525,9 +526,9 @@ void PSMainFrame::OnOptionsFonts()
 	pInfoTab->SetFontIndirect(&lf);
 
 	CWinApp* pApp = AfxGetApp();
-	BOOL bRet = pApp->WriteProfileString("Settings", "Font Name", dlg.GetFaceName());
+	BOOL bRet = pApp->WriteProfileString(L"Settings", L"Font Name", dlg.GetFaceName());
 	ASSERT(bRet);
-	bRet = pApp->WriteProfileInt("Settings", "Font Size", dlg.GetSize() / 10);
+	bRet = pApp->WriteProfileInt(L"Settings", L"Font Size", dlg.GetSize() / 10);
 	ASSERT(bRet);
 }
 
@@ -559,7 +560,7 @@ void PSMainFrame::GetMessageString(UINT nID, CString& strMessage) const
 		CMenu* pMenu = GetMenu();
 		CString strVariantName;
 		pMenu->GetMenuString(nID, strVariantName, MF_BYCOMMAND);
-		strMessage.Format("Start a new %s game", strVariantName);
+		strMessage.Format(L"Start a new %s game", strVariantName);
 		return;
 	}
 
@@ -602,7 +603,7 @@ void PSMainFrame::AddMenus()
 	// Append all the menus found in the registry under Variants key;
 	CWinApp* pApp = AfxGetApp();
 	CString strVariants;
-	strVariants = pApp->GetProfileString("Settings", "Variants", "Standard");
+	strVariants = pApp->GetProfileString(L"Settings", L"Variants", L"Standard");
 	// strVariants contains all the names of the variants registered with Diplo, 
 	// separated by a space. Parse strVariants to get the variants.
 	int nIndex = 0;

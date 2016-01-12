@@ -100,7 +100,7 @@ int PSBuildBar::OnCreate(LPCREATESTRUCT lpCreateStruct)
 
 	// Create the Spring button.
 	DWORD dwStyle = WS_CHILD | WS_VISIBLE;
-	if (!m_SpringButton.Create("Spring", dwStyle, rect, this, ID_SEASON_BUTTON))
+	if (!m_SpringButton.Create(L"Spring", dwStyle, rect, this, ID_SEASON_BUTTON))
 		return -1;
 
 	// Create the Fall button.
@@ -122,7 +122,7 @@ int PSBuildBar::OnCreate(LPCREATESTRUCT lpCreateStruct)
         return -1;
 
 	CString strYears;
-	i = TG.GetFirstYear();
+	int i = TG.GetFirstYear();
 	while (i <= TG.GetLastYear())
 	{
         strYears.Format ("%d", i++);
@@ -133,7 +133,7 @@ int PSBuildBar::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	rect.left = rect.right;
 	rect.right = rect.left + sizeButton.cx;
 	rect.bottom = rect.top + sizeButton.cy;
-	if (!m_CloseButton.Create("OK", dwStyle, rect, this, ID_OK_BUILD_BUTTON))
+	if (!m_CloseButton.Create(L"OK", dwStyle, rect, this, ID_OK_BUILD_BUTTON))
 		return -1;
 
 	EnableDocking(0);	
@@ -192,9 +192,9 @@ void PSBuildBar::OnSeasonButton()
 void PSBuildBar::OnUpdateSeasonButton(CCmdUI* pCmdUI) 
 {
 	if (TG.GetSeason() == SPRING)
-		pCmdUI->SetText("Spring");
+		pCmdUI->SetText(L"Spring");
 	else 
-		pCmdUI->SetText("Fall");
+		pCmdUI->SetText(L"Fall");
 
 	if (TG.GetStatus() == BUILDGAME)
 		pCmdUI->Enable(TRUE);

@@ -71,11 +71,11 @@ void PSPasswordDlg::OnOK()
 		if (m_nRetries == 3)
 		{
 			m_nRetries = 0;
-			MessageBox("Thank you for trying. Good Bye!", "Diplo", MB_ICONEXCLAMATION);
+			MessageBox(L"Thank you for trying. Good Bye!", L"Diplo", MB_ICONEXCLAMATION);
 			EndDialog(IDCANCEL);
 		}
 		else 
-			MessageBox("Invalid Password", "Diplo", MB_ICONEXCLAMATION);
+			MessageBox(L"Invalid Password", L"Diplo", MB_ICONEXCLAMATION);
 	}
 }
 

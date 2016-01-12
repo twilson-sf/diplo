@@ -49,7 +49,7 @@ void PSOrdersTab::SelectString(int nCount)
 {
 	int rez = SetCurSel(nCount);
 	if (rez == LB_ERR) 
-		MessageBox("No Selection", "Diplo", MB_ICONEXCLAMATION);
+		MessageBox(L"No Selection", L"Diplo", MB_ICONEXCLAMATION);
 }
 
 
@@ -64,7 +64,7 @@ int PSOrdersTab::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	if (CListBox::OnCreate(lpCreateStruct) == -1)
 		return -1;
 	
-	m_Font.CreatePointFont(80, "Tahoma");
+	m_Font.CreatePointFont(80, L"Tahoma");
 	SetFont(&m_Font);
 
 	return 0;

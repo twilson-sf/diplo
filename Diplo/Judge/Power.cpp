@@ -74,12 +74,12 @@ CString PSPower::GetAllInfo()
 	int nArmies = 0;
 	int nFleets = 0;
 	SCs vSCs = TG.GetSCs(this);
-	strSCs.Format("%d%s", vSCs.size(), (vSCs.size() != 1) ? " SC-s:" : " SC:");
+	strSCs.Format(L"%d%s", vSCs.size(), (vSCs.size() != 1) ? L" SC-s:" : L" SC:");
 	for (int i = 0; i < vSCs.size(); i++)
 		strSCs += " " + vSCs[i]->m_pProvince->m_strName;
 
 	Units vUnits = TG.GetUnits(this);
-	for (i = 0; i < vUnits.size(); i++)
+	for (int i = 0; i < vUnits.size(); i++)
 	{
 		if (vUnits[i]->GetType() == ARMY)
 		{
@@ -99,11 +99,11 @@ CString PSPower::GetAllInfo()
 	}
 
 	if (!nArmies && ! nFleets && vSCs.empty())
-		strInfo.Format("%s%s%s", m_strName, ":\r\n", "Eliminated\r\n\r\n");// TODO: Conditions may vary.
+		strInfo.Format(L"%s%s%s", m_strName, L":\r\n", L"Eliminated\r\n\r\n");// TODO: Conditions may vary.
 	else
-		strInfo.Format("%s%s%s%s%d%s%s%s%d%s%s%s", m_strName, ":\r\n", strSCs, "\r\n", 
-			nArmies, (nArmies != 1) ? " Armies: " : " Army: ", strArmies, "\r\n", 
-			nFleets, (nFleets != 1) ? " Fleets: " : " Fleet: ", strFleets, "\r\n\r\n");
+		strInfo.Format(L"%s%s%s%s%d%s%s%s%d%s%s%s", m_strName, L":\r\n", strSCs, L"\r\n", 
+			nArmies, (nArmies != 1) ? L" Armies: " : L" Army: ", strArmies, L"\r\n", 
+			nFleets, (nFleets != 1) ? L" Fleets: " : L" Fleet: ", strFleets, "\r\n\r\n");
 
 	return strInfo;
 }

@@ -52,8 +52,8 @@ protected:
 	CPoint m_ptPosition;
 	BOOL m_bMoving;
 	static CScrollView* m_pView;
-	static m_nWidth;
-	static m_nHeight;
+	static int m_nWidth;
+	static int m_nHeight;
 
 public:
 	int m_nDefenseStrength;

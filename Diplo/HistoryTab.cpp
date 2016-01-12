@@ -50,7 +50,7 @@ int PSHistoryTab::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	if (CTreeCtrl::OnCreate(lpCreateStruct) == -1)
 		return -1;
 	
-	m_Font.CreatePointFont(80, "Tahoma");// Hard code here.
+	m_Font.CreatePointFont(80, L"Tahoma");// Hard code here.
 	SetFont(&m_Font);
 
 	// Initialize m_Phases.
@@ -84,7 +84,7 @@ void PSHistoryTab::Load(PSHistory* pHist)
 		m_hRoot = InsertItem(strTitle);
 
 		// Add the steps.
-		for (i = 0; i < pHist->GetNumberOfSteps(); i++)
+		for (int i = 0; i < pHist->GetNumberOfSteps(); i++)
 			InsertStep(pHist->GetStep(i));
 	}
 }
@@ -101,7 +101,7 @@ void PSHistoryTab::InsertYear(PSStep* pStep)
 {
 	// Years can be inserted only in the root, in sorted fashion.
 	CString strYear;
-	strYear.Format("%d", (int)pStep->GetYear());
+	strYear.Format(L"%d", (int)pStep->GetYear());
 	// See if the year is already in the tree.
 	HTREEITEM hYear = GetChildItem(m_hRoot);
 	while (GetItemText(hYear) != strYear && hYear != NULL)

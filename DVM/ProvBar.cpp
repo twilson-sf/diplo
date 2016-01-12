@@ -77,12 +77,12 @@ int PSProvBar::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	dwStyle = WS_CHILD | WS_VISIBLE;
 	GetItemRect(11, rect);
 	rect.right = rect.left + nWidth;
-	m_CancelButton.Create("Cancel", dwStyle, rect, this, ID_PROV_CANCEL_BUTTON);
+	m_CancelButton.Create(L"Cancel", dwStyle, rect, this, ID_PROV_CANCEL_BUTTON);
 
 	GetItemRect(14, rect);
 	rect.left += nWidth / 2;
 	rect.right = rect.left + nWidth;
-	m_OKButton.Create("OK", dwStyle, rect, this, ID_PROV_OK_BUTTON);
+	m_OKButton.Create(L"OK", dwStyle, rect, this, ID_PROV_OK_BUTTON);
 	return 0;
 }
 

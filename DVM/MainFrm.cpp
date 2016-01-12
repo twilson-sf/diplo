@@ -89,8 +89,8 @@ BOOL PSMainFrame::PreCreateWindow(CREATESTRUCT& cs)
 	CFrameWnd::PreCreateWindow(cs);
 
 	CString strSection = "Settings";
-	UINT uWidth = AfxGetApp()->GetProfileInt(strSection, "Window Width", 870);
-	UINT uHeight = AfxGetApp()->GetProfileInt(strSection, "Window Height", 715);
+	UINT uWidth = AfxGetApp()->GetProfileInt(strSection, L"Window Width", 870);
+	UINT uHeight = AfxGetApp()->GetProfileInt(strSection, L"Window Height", 715);
 	cs.cx = uWidth;
 	cs.cy = uHeight;
 
@@ -144,8 +144,8 @@ void PSMainFrame::OnDestroy()
 	CString strSection = "Settings";
 	CRect rect;
 	GetWindowRect(&rect);
-	AfxGetApp()->WriteProfileInt(strSection, "Window Width", rect.Width());
-	AfxGetApp()->WriteProfileInt(strSection, "Window Height", rect.Height());
+	AfxGetApp()->WriteProfileInt(strSection, L"Window Width", rect.Width());
+	AfxGetApp()->WriteProfileInt(strSection, L"Window Height", rect.Height());
 
 	CFrameWnd::OnDestroy();
 }

@@ -49,7 +49,8 @@ BOOL PSWelcomePowEditor::OnInitDialog()
 	
 	// Fill the list control with the names of provinces.
 	CListBox* pProvLB = (CListBox*) GetDlgItem(IDC_PROV_LIST);
-	for (int i = 1; i <= TG.GetNumberOfPowers(); i++)
+	int i;
+	for (i = 1; i <= TG.GetNumberOfPowers(); i++)
 	{
 		PSPower* pPow = TG.GetPower(i);
 		ASSERT(pPow);
@@ -68,7 +69,7 @@ void PSWelcomePowEditor::OnOK()
 	if (m_strSelectedPow == "" && 
 		(m_nSelection == 1 || m_nSelection == 2))
 	{
-		MessageBox("Please select a power to continue.", "DipSheet", MB_ICONEXCLAMATION);
+		MessageBox(L"Please select a power to continue.", L"DipSheet", MB_ICONEXCLAMATION);
 		return;
 	}
 
@@ -116,7 +117,7 @@ void PSWelcomePowEditor::OnOK()
 	case 2:// Remove
 		pCurPow = TG.GetPower(m_strSelectedPow);
 		ASSERT(pCurPow);
-		if (MessageBox("Are you sure you wish to delete " + m_strSelectedPow + "?", "DipSheet", MB_YESNO) == IDYES)
+		if (MessageBox(L"Are you sure you wish to delete " + m_strSelectedPow + "?", L"DipSheet", MB_YESNO) == IDYES)
 		{
 			TG.DeletePower(pCurPow);
 			CListBox* pLB = (CListBox*)GetDlgItem(IDC_PROV_LIST);

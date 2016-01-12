@@ -67,7 +67,7 @@ PSData::PSData(PSData& Data)
 	}
 
 	SCs vSCs = Data.GetSCs();
-	for (i = 0; i < vSCs.size(); i++)
+	for (int i = 0; i < vSCs.size(); i++)
 	{
 		SC* pSC = new SC;
 		pSC->m_pProvince = Data.GetSC(i)->m_pProvince;
@@ -75,7 +75,7 @@ PSData::PSData(PSData& Data)
 		m_SCs.push_back(pSC);
 	}
 	m_arStrMovingUnits.RemoveAll();
-	for (i = 0; i < Data.m_arStrMovingUnits.GetSize(); i++)
+	for (int i = 0; i < Data.m_arStrMovingUnits.GetSize(); i++)
 	{
 		CString strMovingUnit = Data.m_arStrMovingUnits[i];
 		m_arStrMovingUnits.Add(strMovingUnit);
@@ -129,7 +129,7 @@ PSData& PSData::operator=(PSData& Data)
 			m_Builds.push_back(pNewBui);
 		}
 		SCs vSCs = Data.GetSCs();
-		for (i = 0; i < vSCs.size(); i++)
+		for (int i = 0; i < vSCs.size(); i++)
 		{
 			SC* pSC = new SC;
 			pSC->m_pProvince = Data.GetSC(i)->m_pProvince;
@@ -137,7 +137,7 @@ PSData& PSData::operator=(PSData& Data)
 			m_SCs.push_back(pSC);
 		}
 		m_arStrMovingUnits.RemoveAll();
-		for (i = 0; i < Data.m_arStrMovingUnits.GetSize(); i++)
+		for (int i = 0; i < Data.m_arStrMovingUnits.GetSize(); i++)
 		{
 			CString strMovingUnit = Data.m_arStrMovingUnits[i];
 			m_arStrMovingUnits.Add(strMovingUnit);
@@ -298,8 +298,8 @@ CString PSData::GetAllInfo()
 	for (int i = 0; i < m_Retreats.size(); i++)
 	{
 		PSUnit* pUnit = m_Retreats[i]->m_pUnit;
-		strInfo.Format("%s%s%s%s%s", pUnit->GetOwner()->m_strName, 
-			" may retreat ", pUnit->GetType() == FLEET ? "fleet in " : "army in ", 
+		strInfo.Format(L"%s%s%s%s%s", pUnit->GetOwner()->m_strName, 
+			L" may retreat ", pUnit->GetType() == FLEET ? L"fleet in " : L"army in ", 
 			pUnit->GetLocation()->m_strName, " to: ");
 
 		for (int j = 0; j < m_Retreats[i]->m_Possib.size(); j++)
@@ -323,7 +323,7 @@ void PSData::Serialize(CArchive& arh)
 			arh << m_arStrMovingUnits[i];
 		int nPowers = TG.GetNumberOfPowers();
 		arh << (long)nPowers;
-		for (i = 1; i <= nPowers; i++)
+		for (int i = 1; i <= nPowers; i++)
 		{
 			PSPower* pPow = TG.GetPower(i);
 			arh << pPow->m_strName;
@@ -338,7 +338,7 @@ void PSData::Serialize(CArchive& arh)
 			SCs vSCs = GetSCs(pPow);
 			int nSCs = vSCs.size();
 			arh << (long)nSCs;
-			for (j = 0; j < nSCs; j++)
+			for (int j = 0; j < nSCs; j++)
 			{
 				PSProvince* pPrv = vSCs[j]->m_pProvince;
 				arh << pPrv->m_strName;
@@ -346,11 +346,11 @@ void PSData::Serialize(CArchive& arh)
 		}
 		int nDisbands = GetNumberOfDisbands();
 		arh << (long)nDisbands;
-		for (i = 0; i < nDisbands; i++)
+		for (int i = 0; i < nDisbands; i++)
 			arh << GetDisband(i)->m_pPower->m_strName;
 		int nBuilds = GetNumberOfBuilds();
 		arh << (long)nBuilds;
-		for (i = 0; i < nBuilds; i++)
+		for (int i = 0; i < nBuilds; i++)
 			arh << GetBuild(i)->m_pPower->m_strName;
 	}
 	else 
@@ -369,7 +369,7 @@ void PSData::Serialize(CArchive& arh)
 		}
 		long lPowers; arh >> lPowers;
 		ASSERT(lPowers == TG.GetNumberOfPowers());
-		for (i = 1; i <= lPowers; i++)
+		for (int i = 1; i <= lPowers; i++)
 		{
 			arh >> strIn;
 			PSPower* pPow = TG.GetPower(strIn);
@@ -391,7 +391,7 @@ void PSData::Serialize(CArchive& arh)
 				pUnit->Serialize(this, arh);
 			}
 			long lSCs; arh >> lSCs;
-			for (j = 0; j < lSCs; j++)
+			for (int j = 0; j < lSCs; j++)
 			{
 				CString strSC; arh >> strSC;
 				SC* pSC = new SC;
@@ -403,7 +403,7 @@ void PSData::Serialize(CArchive& arh)
 		}
 
 		long lDisbands; arh >> lDisbands;
-		for (i = 0; i < lDisbands; i++)
+		for (int i = 0; i < lDisbands; i++)
 		{
 			CString strDisband; arh >> strDisband;
 			Disband* pDis = new Disband;
@@ -411,7 +411,7 @@ void PSData::Serialize(CArchive& arh)
 			AddDisband(pDis);
 		}
 		long lBuilds; arh >> lBuilds;
-		for (i = 0; i < lBuilds; i++)
+		for (int i = 0; i < lBuilds; i++)
 		{
 			CString strBuild; arh >> strBuild;
 			Build* pBui = new Build;

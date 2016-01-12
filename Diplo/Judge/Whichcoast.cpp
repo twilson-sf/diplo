@@ -66,7 +66,7 @@ BOOL PSWhichCoast::OnInitDialog()
 	CDialog::OnInitDialog();
 
 	CString strMessage;
-	strMessage.Format("%s%s%s", "Which coast of ", m_pPrv->m_strName, " ?");
+	strMessage.Format("%s%s%s", L"Which coast of ", m_pPrv->m_strName, " ?");
 	GetDlgItem(IDC_WHICHTEXT)->SetWindowText(strMessage);
 	ASSERT(m_pPrv->IsBicoastal());
 	GetDlgItem(IDC_FIRST_COAST)->SetWindowText(m_pPrv->GetCoast(1)->m_strName);

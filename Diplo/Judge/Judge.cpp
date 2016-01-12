@@ -312,7 +312,7 @@ void PSJudge::Initialize()
 
 	// Consider Hold for unordered units.
 	Orders::iterator pO;
-	for (i = 1; i <= TG.GetNumberOfProvinces(); i++)
+	for (int i = 1; i <= TG.GetNumberOfProvinces(); i++)
 	{
 		PSProvince* pCurrentProvince = TG.GetProvince(i);
 		if (pCurrentProvince->GetOccupant())

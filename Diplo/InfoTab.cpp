@@ -40,8 +40,8 @@ int PSInfoTab::OnCreate(LPCREATESTRUCT lpCreateStruct)
 
 	CClientDC dc(this);
 	CWinApp* pApp = AfxGetApp();
-	CString strName = pApp->GetProfileString("Settings", "Font Name", "Tahoma");
-	int nSize = pApp->GetProfileInt("Settings", "Font Size", 8);
+	CString strName = pApp->GetProfileString(L"Settings", L"Font Name", L"Tahoma");
+	int nSize = pApp->GetProfileInt(L"Settings", L"Font Size", 8);
 	int nHeight = -((dc.GetDeviceCaps(LOGPIXELSY) * nSize) / 72);
 	m_Font.CreateFont(nHeight, 0, 0, 0, FW_NORMAL, 0, 0, 0, 0, 0, 0, 0, 0, strName);
 	SetFont(&m_Font);
